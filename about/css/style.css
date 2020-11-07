@@ -1366,6 +1366,18 @@ form.contact_form {
 	.wthreeskills-grid-2 h4 {
 		width: 53%;
 	}
+	.wthreeskills-grid-2 h4 {
+		width: 53%;
+	}
+	.columnaMedios {
+		width: 100%;
+	}
+}
+@media screen and (min-width: 1700px) {
+  .columnaMedios {
+		width: 50%;
+		float: left;
+	}
 }
 
 @media screen and (max-width: 991px) {
