@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="msapplication-TileColor" content="#01B6C7">
+	<meta name="theme-color" content="#546E7A">
+
+	<link rel="stylesheet" href="./estilosGeneral.css">
+	<title>ASections v3.0</title>
+	</style>
+	<link rel="stylesheet" href="https://unpkg.com/picnic">
+	<link rel="stylesheet" href="picnic.min.css">
+</head>
+<body class="cuerpo">
+	<div class="modal">
+  <input id="modal_1" type="checkbox" />
+  <label for="modal_1" class="overlay"></label>
+  <article>
+    <header>
+      <h3>Upps! Lo haces mal</h3>
+      <label for="modal_1" class="close">&times;</label>
+    </header>
+    <section class="content">
+      Recuerda que un poligono tiene por lo menos 3 vertices, es decir, tienes que escribir por lo menos 4 coordenadas Ejemplo: 0,1.7;5,1.7;5,3;0,1.7 Ademas, el primer punto y el ultimo punto deben ser el mismo.
+    </section>
+    <footer>
+      <a class="button" href="#" onclick="var mods = document.querySelectorAll('.modal > [type=checkbox]');
+    [].forEach.call(mods, function(mod){ mod.checked = false; });">Aceptar</a>
+    </footer>
+  </article>
+</div>
+	<article class="card">
+		<HEADER>
+	<h1>
+		CALCULADORA DE CARACTERISTICAS GEOMÉTRICAS
+	</h1>
+	</HEADER>
+	<footer>
+	<fieldset class="flex two" style="margin: 0px">
+		<input type="text" name="coord" id="coord" placeholder="Ejm. 1,2;3,4;5,2;3,2;1,2" onkeypress="enter">
+		</fieldset><select id="figruaSselect" class="hh">
+	      <option value="1">Agregar</option>
+	      <option value="-1">Restar</option>
+	    </select>
+	<button id="btn" onclick="agregarPunto()" data-tooltip="Calcular y Dibujar" class="success" >Click!</button>
+	<button onclick="borrar()" data-tooltip="Borra el estado actual" class="warning">Borrar</button>
+	<input data-tooltip="Selecciona el color" type="color" id="colores" class="hh" style="height: 40px; width: 70px; margin-left: 1px; margin-top: 10px"></input>
+	<div>
+	</p>
+	</div>
+	<input data-tooltip="Carga una figura por medio de un archivo" type="file" id="csv" accept="text/txt, text/csv" class="autosuper">
+
+	<p>Para introducir las coordenadas introduce parejas ordenadas ("a,b") separadas por puntos y comas(";"). Los decimales se separan por punto. La cruz roja representa el centroide de la fugra general. La cruz azul representa el centroide de cada figura</p>
+	</footer>
+</article>
+<div style="float: center">
+	<div style="float: left;">
+		<canvas id="canvas" width="600" height="600" style="float: left; border: 2px solid black; border-radius: 8px; margin-top: 5px; margin-bottom: 10px"></canvas>
+		<div id="id1" class="third" style="border: 2px solid gray; border-radius: 8px;float: left; margin-left: 20px; margin-top: 5px">
+		<p id="txt1" class="button stack icon-picture">Centroide en x: 0</p>
+		<p id="txt2" class="button stack icon-picture">Centroide en y: 0</p>
+		<p id="txt3" class="button stack icon-picture">Area: 0</p>
+		<p id="txt4" class="button stack icon-picture">Inercia: 0</p>
+		<a href="" id="a" onclick="descargarFigura()" class="button stack icon-picture">Click aqui para descargar tu figura como txt</a>
+		<a href="https://play.google.com/store/apps/details?id=com.asections" class="button stack icon-picture" target="_blank">Click aqui para descargar la version para Android</a>
+		<div style="float: bottom;">
+		<article class="card">
+			<header>
+				<p>Creado y desarrollado por: Arturo Rodriguez y Juan Pablo Cortés</p>
+			</header>
+			<footer>
+				<a href="mailto:da.rodriguezh@uniandes.edu.co;jp.cortesd@uniandes.edu.co">E-mail: da.rodriguezh@uniandes.edu.co, jp.cortesd@uniandes.edu.co</a>
+				<hr>
+				<a href="https://uniandes.edu.co/" target="_blank">Universidad de Los Andes</a>
+				<hr>
+				<a href="https://github.com/ZibraMax/inertiamoment/" target="_blank">GitHub</a>
+			</footer>
+		</article>
+		</div>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="./funcionamientoCentral.js"></script>
+	</script>
+	<script type="text/javascript" src="funcionalidadesAdicionales.js"></script>
+</body>
+</html>
